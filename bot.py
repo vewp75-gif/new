@@ -12,7 +12,7 @@ async def chat(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await update.message.reply_text(response.output_text)
 
-app = Application.builder().token(os.getenv("8671296769:AAGYxP49j3L9ij7CYI0q9XipXTfexbJIAeY")).build()
+app = Application.builder().token(os.environ["8671296769:AAGYxP49j3L9ij7CYI0q9XipXTfexbJIAeY"]).build()
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, chat))
 
 app.run_polling()
